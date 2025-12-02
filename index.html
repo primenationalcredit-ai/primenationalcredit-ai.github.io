@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASAP Financial Playbooks | Choose Your Path</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(135deg,#0a1628 0%,#1e3a5f 50%,#2563eb 100%);min-height:100vh;color:#fff}
+.container{max-width:1000px;margin:0 auto;padding:40px 20px}
+.header{text-align:center;margin-bottom:50px}
+.logo{width:120px;height:120px;background:#fff;border-radius:50%;margin:0 auto 25px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 40px rgba(0,0,0,0.3)}
+.logo img{max-width:80%;max-height:80%;object-fit:contain}
+.header h1{font-size:42px;font-weight:700;margin-bottom:15px;text-shadow:2px 2px 4px rgba(0,0,0,0.3)}
+.header p{font-size:20px;opacity:0.9;max-width:600px;margin:0 auto}
+.question{text-align:center;margin-bottom:40px}
+.question h2{font-size:28px;font-weight:600;color:#60a5fa}
+.paths{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;margin-bottom:50px}
+@media(max-width:768px){.paths{grid-template-columns:1fr}}
+.path-card{background:linear-gradient(145deg,rgba(255,255,255,0.1) 0%,rgba(255,255,255,0.05) 100%);border:2px solid rgba(255,255,255,0.2);border-radius:20px;padding:40px 30px;text-align:center;cursor:pointer;transition:all 0.3s ease;position:relative;overflow:hidden}
+.path-card:hover{transform:translateY(-10px);border-color:rgba(255,255,255,0.5);box-shadow:0 20px 60px rgba(0,0,0,0.4)}
+.path-card::before{content:'';position:absolute;top:0;left:0;right:0;height:5px}
+.path-card.income::before{background:linear-gradient(90deg,#10b981,#34d399)}
+.path-card.expense::before{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+.path-icon{font-size:80px;margin-bottom:20px}
+.path-card h3{font-size:28px;font-weight:700;margin-bottom:15px}
+.path-card p{font-size:16px;opacity:0.85;margin-bottom:25px;line-height:1.6}
+.path-stats{display:flex;justify-content:center;gap:30px;margin-bottom:25px}
+.stat{text-align:center}
+.stat-num{font-size:32px;font-weight:700;color:#60a5fa}
+.stat-label{font-size:12px;opacity:0.7;text-transform:uppercase}
+.path-btn{display:inline-block;padding:15px 40px;background:linear-gradient(135deg,#2563eb 0%,#1d4ed8 100%);color:#fff;text-decoration:none;border-radius:30px;font-weight:600;font-size:16px;transition:all 0.3s}
+.path-card.income .path-btn{background:linear-gradient(135deg,#10b981 0%,#059669 100%)}
+.path-card.expense .path-btn{background:linear-gradient(135deg,#f59e0b 0%,#d97706 100%)}
+.path-btn:hover{transform:scale(1.05);box-shadow:0 10px 30px rgba(0,0,0,0.3)}
+.footer{text-align:center;padding-top:30px;border-top:1px solid rgba(255,255,255,0.1)}
+.footer p{opacity:0.6;font-size:14px}
+.footer a{color:#60a5fa;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<div class="logo">
+<img src="logo.png" alt="ASAP Credit Repair">
+</div>
+<h1>ASAP Financial Playbooks</h1>
+<p>Step-by-step guides to transform your finances. Choose your starting point below.</p>
+</div>
+
+<div class="question">
+<h2>What's your #1 priority right now?</h2>
+</div>
+
+<div class="paths">
+<a href="income-playbooks.html" class="path-card income" style="text-decoration:none;color:#fff">
+<div class="path-icon">💰</div>
+<h3>Increase My Income</h3>
+<p>Side hustles, gig economy, freelancing, passive income streams, and creative ways to make more money</p>
+<div class="path-stats">
+<div class="stat">
+<div class="stat-num">150+</div>
+<div class="stat-label">Playbooks</div>
+</div>
+<div class="stat">
+<div class="stat-num">$500+</div>
+<div class="stat-label">Avg Monthly Potential</div>
+</div>
+</div>
+<span class="path-btn">Browse Income Ideas →</span>
+</a>
+
+<a href="expense-playbooks.html" class="path-card expense" style="text-decoration:none;color:#fff">
+<div class="path-icon">✂️</div>
+<h3>Reduce My Expenses</h3>
+<p>Cut bills, cancel subscriptions, negotiate rates, save on groceries, and keep more of what you earn</p>
+<div class="path-stats">
+<div class="stat">
+<div class="stat-num">100+</div>
+<div class="stat-label">Playbooks</div>
+</div>
+<div class="stat">
+<div class="stat-num">$300+</div>
+<div class="stat-label">Avg Monthly Savings</div>
+</div>
+</div>
+<span class="path-btn">Browse Savings Ideas →</span>
+</a>
+</div>
+
+<div class="footer">
+<p>Part of your <a href="#">ASAP Financial Blueprint™</a> | © 2024 ASAP Credit Repair</p>
+</div>
+</div>
+</body>
+</html>
