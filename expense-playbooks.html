@@ -13,21 +13,15 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-
 .back-link{position:absolute;top:20px;left:20px;color:#fff;text-decoration:none;font-size:14px;opacity:0.8}
 .back-link:hover{opacity:1}
 .container{max-width:900px;margin:0 auto;padding:30px 20px}
-
-/* Quick Wins */
 .quick-wins{background:linear-gradient(135deg,#dbeafe 0%,#bfdbfe 100%);border:2px solid #2563eb;border-radius:12px;padding:25px;margin-bottom:30px}
 .quick-wins h3{color:#1e3a5f;font-size:18px;margin-bottom:8px}
 .quick-wins p{color:#1e40af;font-size:14px;margin-bottom:15px}
 .quick-wins-list{display:flex;flex-wrap:wrap;gap:10px}
 .quick-win-link{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;background:#fff;border:2px solid #2563eb;color:#1e3a5f;border-radius:8px;text-decoration:none;font-weight:600;font-size:13px;transition:all 0.2s}
 .quick-win-link:hover{background:#2563eb;color:#fff}
-
-/* Search */
 .search-container{margin-bottom:30px}
 .search-box{width:100%;padding:15px 20px;border:2px solid #e0e0e0;border-radius:10px;font-size:16px;background:#fff}
 .search-box:focus{outline:none;border-color:#2563eb}
-
-/* Category Accordion */
 .category{background:#fff;border-radius:12px;margin-bottom:15px;box-shadow:0 2px 10px rgba(0,0,0,0.08);overflow:hidden}
 .category-header{padding:20px 25px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;transition:background 0.2s}
 .category-header:hover{background:#f8fafc}
@@ -37,8 +31,6 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-
 .category-count{font-size:13px;color:#64748b;margin-top:2px}
 .category-arrow{font-size:20px;color:#94a3b8;transition:transform 0.3s}
 .category.open .category-arrow{transform:rotate(180deg)}
-
-/* Playbook List */
 .playbook-list{display:none;border-top:1px solid #e2e8f0}
 .category.open .playbook-list{display:block}
 .playbook-item{display:flex;align-items:center;justify-content:space-between;padding:15px 25px;border-bottom:1px solid #f1f5f9;text-decoration:none;color:#333;transition:background 0.2s}
@@ -51,11 +43,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-
 .playbook-savings{font-size:13px;color:#059669;font-weight:600}
 .playbook-time{font-size:11px;padding:4px 10px;border-radius:15px;background:#f1f5f9;color:#475569}
 .playbook-arrow{color:#cbd5e1;font-size:18px}
-
-@media(max-width:600px){
-.playbook-item{flex-direction:column;align-items:flex-start;gap:10px}
-.playbook-meta{width:100%;justify-content:space-between}
-}
+@media(max-width:600px){.playbook-item{flex-direction:column;align-items:flex-start;gap:10px}.playbook-meta{width:100%;justify-content:space-between}}
 </style>
 </head>
 <body>
@@ -64,27 +52,21 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-
 <h1>✂️ Reduce Expenses</h1>
 <p>Step-by-step playbooks to cut costs and keep more money every month</p>
 </div>
-
 <div class="container">
-
-<!-- Quick Wins -->
 <div class="quick-wins">
 <h3>⚡ 5-Minute Quick Wins - Start Here!</h3>
 <p>These take less than 5 minutes and save money immediately:</p>
 <div class="quick-wins-list">
-<a href="subscription-cancel.html" class="quick-win-link">✂️ Cancel Subscriptions</a>
-<a href="delete-shopping-apps.html" class="quick-win-link">📱 Delete Shopping Apps</a>
-<a href="unsubscribe-emails.html" class="quick-win-link">📧 Unsubscribe Emails</a>
-<a href="autopay-setup.html" class="quick-win-link">⚡ Setup Autopay</a>
+<a href="/blueprints/subscription-cancel.html" class="quick-win-link">✂️ Cancel Subscriptions</a>
+<a href="/blueprints/delete-shopping-apps.html" class="quick-win-link">📱 Delete Shopping Apps</a>
+<a href="/blueprints/unsubscribe-emails.html" class="quick-win-link">📧 Unsubscribe Emails</a>
+<a href="/blueprints/autopay-setup.html" class="quick-win-link">⚡ Setup Autopay</a>
 </div>
 </div>
-
-<!-- Search -->
 <div class="search-container">
 <input type="text" class="search-box" id="search" placeholder="🔍 Search all playbooks...">
 </div>
 
-<!-- Categories -->
 <div class="category open" data-category="shopping">
 <div class="category-header" onclick="toggleCategory(this)">
 <div class="category-left">
@@ -97,94 +79,14 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-
 <span class="category-arrow">▼</span>
 </div>
 <div class="playbook-list">
-<a href="delete-shopping-apps.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Delete Shopping Apps</div>
-<div class="playbook-desc">Remove Amazon, Target, etc. from your phone</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $200-500/mo</span>
-<span class="playbook-time">5 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="delete-saved-cards.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Delete Saved Cards</div>
-<div class="playbook-desc">Remove saved payment methods everywhere</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $100-300/mo</span>
-<span class="playbook-time">15 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="card-number-reset.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Card Number Reset</div>
-<div class="playbook-desc">Get new card numbers to break all saved cards</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $100-400/mo</span>
-<span class="playbook-time">15 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="zero-spend-challenge.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">48-Hour Zero-Spend Challenge</div>
-<div class="playbook-desc">Reset spending habits with a 48-hour freeze</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $50-150</span>
-<span class="playbook-time">5 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="zero-spend-week.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Zero-Spend Week Challenge</div>
-<div class="playbook-desc">Full week of no unnecessary spending</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $200-500</span>
-<span class="playbook-time">5 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="no-spend-challenge.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">No-Spend Challenge Guide</div>
-<div class="playbook-desc">Complete guide to no-spend periods</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $100-400</span>
-<span class="playbook-time">10 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="unsubscribe-emails.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Unsubscribe from Marketing Emails</div>
-<div class="playbook-desc">Stop tempting sale emails</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Prevents impulse buys</span>
-<span class="playbook-time">5 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="shopping-app-detox.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Shopping App Detox</div>
-<div class="playbook-desc">Complete guide to breaking app addiction</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $200-600/mo</span>
-<span class="playbook-time">15 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
+<a href="/blueprints/delete-shopping-apps.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Delete Shopping Apps</div><div class="playbook-desc">Remove Amazon, Target, etc. from your phone</div></div><div class="playbook-meta"><span class="playbook-savings">Save $200-500/mo</span><span class="playbook-time">5 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/delete-saved-cards.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Delete Saved Cards</div><div class="playbook-desc">Remove saved payment methods everywhere</div></div><div class="playbook-meta"><span class="playbook-savings">Save $100-300/mo</span><span class="playbook-time">15 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/card-number-reset.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Card Number Reset</div><div class="playbook-desc">Get new card numbers to break all saved cards</div></div><div class="playbook-meta"><span class="playbook-savings">Save $100-400/mo</span><span class="playbook-time">15 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/zero-spend-challenge.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">48-Hour Zero-Spend Challenge</div><div class="playbook-desc">Reset spending habits with a 48-hour freeze</div></div><div class="playbook-meta"><span class="playbook-savings">Save $50-150</span><span class="playbook-time">5 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/zero-spend-week.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Zero-Spend Week Challenge</div><div class="playbook-desc">Full week of no unnecessary spending</div></div><div class="playbook-meta"><span class="playbook-savings">Save $200-500</span><span class="playbook-time">5 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/no-spend-challenge.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">No-Spend Challenge Guide</div><div class="playbook-desc">Complete guide to no-spend periods</div></div><div class="playbook-meta"><span class="playbook-savings">Save $100-400</span><span class="playbook-time">10 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/unsubscribe-emails.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Unsubscribe from Marketing Emails</div><div class="playbook-desc">Stop tempting sale emails</div></div><div class="playbook-meta"><span class="playbook-savings">Prevents impulse buys</span><span class="playbook-time">5 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/shopping-app-detox.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Shopping App Detox</div><div class="playbook-desc">Complete guide to breaking app addiction</div></div><div class="playbook-meta"><span class="playbook-savings">Save $200-600/mo</span><span class="playbook-time">15 min</span></div><span class="playbook-arrow">→</span></a>
 </div>
 </div>
 
@@ -200,72 +102,12 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-
 <span class="category-arrow">▼</span>
 </div>
 <div class="playbook-list">
-<a href="subscription-cancel.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Subscription Audit & Cancel Scripts</div>
-<div class="playbook-desc">Find all subscriptions and cancel unused ones</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $50-200/mo</span>
-<span class="playbook-time">15 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="cancel-subscriptions.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Cancel Subscriptions Checklist</div>
-<div class="playbook-desc">Quick checklist of common subscriptions to cancel</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $50-150/mo</span>
-<span class="playbook-time">10 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="cancel-unused-subscriptions.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Find Unused Subscriptions</div>
-<div class="playbook-desc">Tools to discover forgotten recurring charges</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $30-100/mo</span>
-<span class="playbook-time">10 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="cancel-gym.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Cancel Gym Membership</div>
-<div class="playbook-desc">Scripts to cancel tricky gym contracts</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $20-100/mo</span>
-<span class="playbook-time">15 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="cut-cable-streaming.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Cut Cable & Streaming</div>
-<div class="playbook-desc">Audit and reduce streaming services</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $50-150/mo</span>
-<span class="playbook-time">10 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="email-unsubscribe.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Email Subscription Cleanup</div>
-<div class="playbook-desc">Mass unsubscribe from promotional emails</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Stops temptation</span>
-<span class="playbook-time">10 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
+<a href="/blueprints/subscription-cancel.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Subscription Audit & Cancel Scripts</div><div class="playbook-desc">Find all subscriptions and cancel unused ones</div></div><div class="playbook-meta"><span class="playbook-savings">Save $50-200/mo</span><span class="playbook-time">15 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/cancel-subscriptions.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Cancel Subscriptions Checklist</div><div class="playbook-desc">Quick checklist of common subscriptions to cancel</div></div><div class="playbook-meta"><span class="playbook-savings">Save $50-150/mo</span><span class="playbook-time">10 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/cancel-unused-subscriptions.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Find Unused Subscriptions</div><div class="playbook-desc">Tools to discover forgotten recurring charges</div></div><div class="playbook-meta"><span class="playbook-savings">Save $30-100/mo</span><span class="playbook-time">10 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/cancel-gym.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Cancel Gym Membership</div><div class="playbook-desc">Scripts to cancel tricky gym contracts</div></div><div class="playbook-meta"><span class="playbook-savings">Save $20-100/mo</span><span class="playbook-time">15 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/cut-cable-streaming.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Cut Cable & Streaming</div><div class="playbook-desc">Audit and reduce streaming services</div></div><div class="playbook-meta"><span class="playbook-savings">Save $50-150/mo</span><span class="playbook-time">10 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/email-unsubscribe.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Email Subscription Cleanup</div><div class="playbook-desc">Mass unsubscribe from promotional emails</div></div><div class="playbook-meta"><span class="playbook-savings">Stops temptation</span><span class="playbook-time">10 min</span></div><span class="playbook-arrow">→</span></a>
 </div>
 </div>
 
@@ -281,138 +123,18 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-
 <span class="category-arrow">▼</span>
 </div>
 <div class="playbook-list">
-<a href="bill-negotiation.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Bill Negotiation Scripts</div>
-<div class="playbook-desc">Word-for-word scripts for phone, internet, cable</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $50-150/mo</span>
-<span class="playbook-time">15 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="negotiate-bills.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Negotiate Any Bill</div>
-<div class="playbook-desc">General negotiation strategies</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $30-100/mo</span>
-<span class="playbook-time">15 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="lower-phone-bill.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Lower Phone Bill</div>
-<div class="playbook-desc">Switch carriers or negotiate lower rate</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $20-50/mo</span>
-<span class="playbook-time">15 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="lower-cell-phone-bill.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Cell Phone Bill Reduction</div>
-<div class="playbook-desc">Compare plans and find savings</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $20-60/mo</span>
-<span class="playbook-time">20 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="lower-utility-bills.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Lower Utility Bills</div>
-<div class="playbook-desc">Cut electric and gas costs</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $30-100/mo</span>
-<span class="playbook-time">30 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="home-energy-savings.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Home Energy Savings</div>
-<div class="playbook-desc">Reduce energy consumption</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $20-80/mo</span>
-<span class="playbook-time">30 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="energy-audit.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">DIY Energy Audit</div>
-<div class="playbook-desc">Find where you're wasting energy</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $30-100/mo</span>
-<span class="playbook-time">45 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="water-bill-reduction.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Water Bill Reduction</div>
-<div class="playbook-desc">Simple ways to cut water costs</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $10-30/mo</span>
-<span class="playbook-time">15 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="negotiate-your-rent-at-renewal.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Negotiate Rent at Renewal</div>
-<div class="playbook-desc">Scripts to avoid rent increases</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $50-200/mo</span>
-<span class="playbook-time">20 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="autopay-setup.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Autopay Setup Guide</div>
-<div class="playbook-desc">Never miss a payment or pay late fees</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Avoid $25+ fees</span>
-<span class="playbook-time">15 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="bank-alerts.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Bank Alert Setup</div>
-<div class="playbook-desc">Get notified of spending and low balances</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Prevents overdrafts</span>
-<span class="playbook-time">10 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="utility-assistance.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Utility Assistance Programs</div>
-<div class="playbook-desc">Find help paying utility bills</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $50-200/mo</span>
-<span class="playbook-time">30 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
+<a href="/blueprints/bill-negotiation.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Bill Negotiation Scripts</div><div class="playbook-desc">Word-for-word scripts for phone, internet, cable</div></div><div class="playbook-meta"><span class="playbook-savings">Save $50-150/mo</span><span class="playbook-time">15 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/negotiate-bills.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Negotiate Any Bill</div><div class="playbook-desc">General negotiation strategies</div></div><div class="playbook-meta"><span class="playbook-savings">Save $30-100/mo</span><span class="playbook-time">15 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/lower-phone-bill.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Lower Phone Bill</div><div class="playbook-desc">Switch carriers or negotiate lower rate</div></div><div class="playbook-meta"><span class="playbook-savings">Save $20-50/mo</span><span class="playbook-time">15 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/lower-cell-phone-bill.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Cell Phone Bill Reduction</div><div class="playbook-desc">Compare plans and find savings</div></div><div class="playbook-meta"><span class="playbook-savings">Save $20-60/mo</span><span class="playbook-time">20 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/lower-utility-bills.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Lower Utility Bills</div><div class="playbook-desc">Cut electric and gas costs</div></div><div class="playbook-meta"><span class="playbook-savings">Save $30-100/mo</span><span class="playbook-time">30 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/home-energy-savings.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Home Energy Savings</div><div class="playbook-desc">Reduce energy consumption</div></div><div class="playbook-meta"><span class="playbook-savings">Save $20-80/mo</span><span class="playbook-time">30 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/energy-audit.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">DIY Energy Audit</div><div class="playbook-desc">Find where you're wasting energy</div></div><div class="playbook-meta"><span class="playbook-savings">Save $30-100/mo</span><span class="playbook-time">45 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/water-bill-reduction.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Water Bill Reduction</div><div class="playbook-desc">Simple ways to cut water costs</div></div><div class="playbook-meta"><span class="playbook-savings">Save $10-30/mo</span><span class="playbook-time">15 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/negotiate-your-rent-at-renewal.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Negotiate Rent at Renewal</div><div class="playbook-desc">Scripts to avoid rent increases</div></div><div class="playbook-meta"><span class="playbook-savings">Save $50-200/mo</span><span class="playbook-time">20 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/autopay-setup.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Autopay Setup Guide</div><div class="playbook-desc">Never miss a payment or pay late fees</div></div><div class="playbook-meta"><span class="playbook-savings">Avoid $25+ fees</span><span class="playbook-time">15 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/bank-alerts.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Bank Alert Setup</div><div class="playbook-desc">Get notified of spending and low balances</div></div><div class="playbook-meta"><span class="playbook-savings">Prevents overdrafts</span><span class="playbook-time">10 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/utility-assistance.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Utility Assistance Programs</div><div class="playbook-desc">Find help paying utility bills</div></div><div class="playbook-meta"><span class="playbook-savings">Save $50-200/mo</span><span class="playbook-time">30 min</span></div><span class="playbook-arrow">→</span></a>
 </div>
 </div>
 
@@ -428,116 +150,16 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-
 <span class="category-arrow">▼</span>
 </div>
 <div class="playbook-list">
-<a href="meal-prep.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Meal Prep Basics</div>
-<div class="playbook-desc">Prep meals on Sunday, save all week</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $200-400/mo</span>
-<span class="playbook-time">30 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="meal-planning-save-money.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Meal Planning to Save Money</div>
-<div class="playbook-desc">Plan meals around sales and what you have</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $100-300/mo</span>
-<span class="playbook-time">20 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="slash-grocery-bill.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Slash Your Grocery Bill</div>
-<div class="playbook-desc">Strategic shopping to cut costs 30-50%</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $100-300/mo</span>
-<span class="playbook-time">15 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="bulk-buying-savings.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Bulk Buying Guide</div>
-<div class="playbook-desc">What to buy in bulk (and what not to)</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $50-150/mo</span>
-<span class="playbook-time">15 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="coupon-stacking.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Coupon Stacking</div>
-<div class="playbook-desc">Combine coupons, apps, and sales</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $50-150/mo</span>
-<span class="playbook-time">15 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="use-cash-back-apps.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Cash Back Apps</div>
-<div class="playbook-desc">Get money back on purchases</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $20-50/mo</span>
-<span class="playbook-time">10 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="rebate-apps.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Rebate Apps Guide</div>
-<div class="playbook-desc">Best apps for grocery rebates</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $15-40/mo</span>
-<span class="playbook-time">10 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="price-matching.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Price Matching</div>
-<div class="playbook-desc">Get the lowest price without multiple trips</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $20-60/mo</span>
-<span class="playbook-time">10 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="grow-your-own-food.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Grow Your Own Food</div>
-<div class="playbook-desc">Start a money-saving garden</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $50-200/mo</span>
-<span class="playbook-time">Ongoing</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="generic-medications.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Generic Medications</div>
-<div class="playbook-desc">Switch to generics and save big</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $20-100/mo</span>
-<span class="playbook-time">15 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
+<a href="/blueprints/meal-prep.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Meal Prep Basics</div><div class="playbook-desc">Prep meals on Sunday, save all week</div></div><div class="playbook-meta"><span class="playbook-savings">Save $200-400/mo</span><span class="playbook-time">30 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/meal-planning-save-money.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Meal Planning to Save Money</div><div class="playbook-desc">Plan meals around sales and what you have</div></div><div class="playbook-meta"><span class="playbook-savings">Save $100-300/mo</span><span class="playbook-time">20 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/slash-grocery-bill.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Slash Your Grocery Bill</div><div class="playbook-desc">Strategic shopping to cut costs 30-50%</div></div><div class="playbook-meta"><span class="playbook-savings">Save $100-300/mo</span><span class="playbook-time">15 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/bulk-buying-savings.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Bulk Buying Guide</div><div class="playbook-desc">What to buy in bulk (and what not to)</div></div><div class="playbook-meta"><span class="playbook-savings">Save $50-150/mo</span><span class="playbook-time">15 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/coupon-stacking.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Coupon Stacking</div><div class="playbook-desc">Combine coupons, apps, and sales</div></div><div class="playbook-meta"><span class="playbook-savings">Save $50-150/mo</span><span class="playbook-time">15 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/use-cash-back-apps.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Cash Back Apps</div><div class="playbook-desc">Get money back on purchases</div></div><div class="playbook-meta"><span class="playbook-savings">Save $20-50/mo</span><span class="playbook-time">10 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/rebate-apps.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Rebate Apps Guide</div><div class="playbook-desc">Best apps for grocery rebates</div></div><div class="playbook-meta"><span class="playbook-savings">Save $15-40/mo</span><span class="playbook-time">10 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/price-matching.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Price Matching</div><div class="playbook-desc">Get the lowest price without multiple trips</div></div><div class="playbook-meta"><span class="playbook-savings">Save $20-60/mo</span><span class="playbook-time">10 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/grow-your-own-food.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Grow Your Own Food</div><div class="playbook-desc">Start a money-saving garden</div></div><div class="playbook-meta"><span class="playbook-savings">Save $50-200/mo</span><span class="playbook-time">Ongoing</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/generic-medications.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Generic Medications</div><div class="playbook-desc">Switch to generics and save big</div></div><div class="playbook-meta"><span class="playbook-savings">Save $20-100/mo</span><span class="playbook-time">15 min</span></div><span class="playbook-arrow">→</span></a>
 </div>
 </div>
 
@@ -553,94 +175,14 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-
 <span class="category-arrow">▼</span>
 </div>
 <div class="playbook-list">
-<a href="shop-auto-insurance.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Shop Auto Insurance</div>
-<div class="playbook-desc">Compare quotes and save hundreds</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $50-200/mo</span>
-<span class="playbook-time">30 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="auto-insurance-savings.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Auto Insurance Discounts</div>
-<div class="playbook-desc">Hidden discounts you might be missing</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $30-100/mo</span>
-<span class="playbook-time">20 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="lower-insurance.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Lower All Insurance Rates</div>
-<div class="playbook-desc">Strategies for any insurance type</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $30-150/mo</span>
-<span class="playbook-time">30 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="negotiate-medical-bills.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Negotiate Medical Bills</div>
-<div class="playbook-desc">Reduce hospital bills by 20-50%</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save 20-50%</span>
-<span class="playbook-time">30 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="medical-billing.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Medical Billing Errors</div>
-<div class="playbook-desc">Find and dispute billing mistakes</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Varies</span>
-<span class="playbook-time">30 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="warranty-claims.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Warranty Claims</div>
-<div class="playbook-desc">Get free replacements and repairs</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Varies</span>
-<span class="playbook-time">15 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="government-assistance.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Government Assistance Programs</div>
-<div class="playbook-desc">Benefits you might qualify for</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Varies</span>
-<span class="playbook-time">45 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="tax-deductions.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Tax Deductions Checklist</div>
-<div class="playbook-desc">Deductions you might be missing</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $100s-1000s</span>
-<span class="playbook-time">30 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
+<a href="/blueprints/shop-auto-insurance.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Shop Auto Insurance</div><div class="playbook-desc">Compare quotes and save hundreds</div></div><div class="playbook-meta"><span class="playbook-savings">Save $50-200/mo</span><span class="playbook-time">30 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/auto-insurance-savings.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Auto Insurance Discounts</div><div class="playbook-desc">Hidden discounts you might be missing</div></div><div class="playbook-meta"><span class="playbook-savings">Save $30-100/mo</span><span class="playbook-time">20 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/lower-insurance.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Lower All Insurance Rates</div><div class="playbook-desc">Strategies for any insurance type</div></div><div class="playbook-meta"><span class="playbook-savings">Save $30-150/mo</span><span class="playbook-time">30 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/negotiate-medical-bills.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Negotiate Medical Bills</div><div class="playbook-desc">Reduce hospital bills by 20-50%</div></div><div class="playbook-meta"><span class="playbook-savings">Save 20-50%</span><span class="playbook-time">30 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/medical-billing.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Medical Billing Errors</div><div class="playbook-desc">Find and dispute billing mistakes</div></div><div class="playbook-meta"><span class="playbook-savings">Varies</span><span class="playbook-time">30 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/warranty-claims.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Warranty Claims</div><div class="playbook-desc">Get free replacements and repairs</div></div><div class="playbook-meta"><span class="playbook-savings">Varies</span><span class="playbook-time">15 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/government-assistance.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Government Assistance Programs</div><div class="playbook-desc">Benefits you might qualify for</div></div><div class="playbook-meta"><span class="playbook-savings">Varies</span><span class="playbook-time">45 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/tax-deductions.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Tax Deductions Checklist</div><div class="playbook-desc">Deductions you might be missing</div></div><div class="playbook-meta"><span class="playbook-savings">Save $100s-1000s</span><span class="playbook-time">30 min</span></div><span class="playbook-arrow">→</span></a>
 </div>
 </div>
 
@@ -656,157 +198,23 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-
 <span class="category-arrow">▼</span>
 </div>
 <div class="playbook-list">
-<a href="apr-negotiation.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Negotiate Credit Card APR</div>
-<div class="playbook-desc">Lower your interest rate with a phone call</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $20-100/mo</span>
-<span class="playbook-time">15 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="negotiate-credit-card-fees.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Waive Credit Card Fees</div>
-<div class="playbook-desc">Get annual fees and late fees waived</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $50-500/yr</span>
-<span class="playbook-time">10 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="refinance-debt.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Refinance High-Interest Debt</div>
-<div class="playbook-desc">Consolidate and lower rates</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $50-300/mo</span>
-<span class="playbook-time">30 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="refinance-high-interest-debt.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Balance Transfer Strategy</div>
-<div class="playbook-desc">Move debt to 0% APR cards</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $100+/mo</span>
-<span class="playbook-time">30 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="refinance-student-loans.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Refinance Student Loans</div>
-<div class="playbook-desc">Lower your student loan payments</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Save $50-200/mo</span>
-<span class="playbook-time">30 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="avalanche-method.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Debt Avalanche Method</div>
-<div class="playbook-desc">Pay highest interest first</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Saves most interest</span>
-<span class="playbook-time">15 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="debt-snowball.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Debt Snowball Method</div>
-<div class="playbook-desc">Pay smallest balances first for wins</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Psychological wins</span>
-<span class="playbook-time">15 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="bank-account-bonuses.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Bank Account Bonuses</div>
-<div class="playbook-desc">Get $100-500 for opening accounts</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Earn $100-500</span>
-<span class="playbook-time">30 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="credit-card-rewards.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Credit Card Rewards</div>
-<div class="playbook-desc">Maximize cash back and points</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Earn $20-100/mo</span>
-<span class="playbook-time">20 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
-<a href="credit-score-boost.html" class="playbook-item">
-<div class="playbook-info">
-<div class="playbook-title">Boost Your Credit Score</div>
-<div class="playbook-desc">Quick wins to improve your score</div>
-</div>
-<div class="playbook-meta">
-<span class="playbook-savings">Better rates</span>
-<span class="playbook-time">20 min</span>
-</div>
-<span class="playbook-arrow">→</span>
-</a>
+<a href="/blueprints/apr-negotiation.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Negotiate Credit Card APR</div><div class="playbook-desc">Lower your interest rate with a phone call</div></div><div class="playbook-meta"><span class="playbook-savings">Save $20-100/mo</span><span class="playbook-time">15 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/negotiate-credit-card-fees.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Waive Credit Card Fees</div><div class="playbook-desc">Get annual fees and late fees waived</div></div><div class="playbook-meta"><span class="playbook-savings">Save $50-500/yr</span><span class="playbook-time">10 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/refinance-debt.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Refinance High-Interest Debt</div><div class="playbook-desc">Consolidate and lower rates</div></div><div class="playbook-meta"><span class="playbook-savings">Save $50-300/mo</span><span class="playbook-time">30 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/refinance-high-interest-debt.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Balance Transfer Strategy</div><div class="playbook-desc">Move debt to 0% APR cards</div></div><div class="playbook-meta"><span class="playbook-savings">Save $100+/mo</span><span class="playbook-time">30 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/refinance-student-loans.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Refinance Student Loans</div><div class="playbook-desc">Lower your student loan payments</div></div><div class="playbook-meta"><span class="playbook-savings">Save $50-200/mo</span><span class="playbook-time">30 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/avalanche-method.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Debt Avalanche Method</div><div class="playbook-desc">Pay highest interest first</div></div><div class="playbook-meta"><span class="playbook-savings">Saves most interest</span><span class="playbook-time">15 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/debt-snowball.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Debt Snowball Method</div><div class="playbook-desc">Pay smallest balances first for wins</div></div><div class="playbook-meta"><span class="playbook-savings">Psychological wins</span><span class="playbook-time">15 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/bank-account-bonuses.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Bank Account Bonuses</div><div class="playbook-desc">Get $100-500 for opening accounts</div></div><div class="playbook-meta"><span class="playbook-savings">Earn $100-500</span><span class="playbook-time">30 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/credit-card-rewards.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Credit Card Rewards</div><div class="playbook-desc">Maximize cash back and points</div></div><div class="playbook-meta"><span class="playbook-savings">Earn $20-100/mo</span><span class="playbook-time">20 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/credit-score-boost.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Boost Your Credit Score</div><div class="playbook-desc">Quick wins to improve your score</div></div><div class="playbook-meta"><span class="playbook-savings">Better rates</span><span class="playbook-time">20 min</span></div><span class="playbook-arrow">→</span></a>
 </div>
 </div>
 
 </div>
-
 <script>
-function toggleCategory(header) {
-  header.parentElement.classList.toggle('open');
-}
-
-document.getElementById('search').addEventListener('input', function() {
-  const query = this.value.toLowerCase();
-  const items = document.querySelectorAll('.playbook-item');
-  const categories = document.querySelectorAll('.category');
-  
-  if(query === '') {
-    categories.forEach((cat, i) => {
-      cat.style.display = 'block';
-      if(i === 0) cat.classList.add('open');
-      else cat.classList.remove('open');
-    });
-    items.forEach(item => item.style.display = 'flex');
-    return;
-  }
-  
-  categories.forEach(cat => {
-    cat.classList.add('open');
-    let hasVisible = false;
-    cat.querySelectorAll('.playbook-item').forEach(item => {
-      const title = item.querySelector('.playbook-title').textContent.toLowerCase();
-      const desc = item.querySelector('.playbook-desc').textContent.toLowerCase();
-      if(title.includes(query) || desc.includes(query)) {
-        item.style.display = 'flex';
-        hasVisible = true;
-      } else {
-        item.style.display = 'none';
-      }
-    });
-    cat.style.display = hasVisible ? 'block' : 'none';
-  });
-});
+function toggleCategory(header){header.parentElement.classList.toggle('open')}
+document.getElementById('search').addEventListener('input',function(){const query=this.value.toLowerCase();const items=document.querySelectorAll('.playbook-item');const categories=document.querySelectorAll('.category');if(query===''){categories.forEach((cat,i)=>{cat.style.display='block';if(i===0)cat.classList.add('open');else cat.classList.remove('open')});items.forEach(item=>item.style.display='flex');return}categories.forEach(cat=>{cat.classList.add('open');let hasVisible=false;cat.querySelectorAll('.playbook-item').forEach(item=>{const title=item.querySelector('.playbook-title').textContent.toLowerCase();const desc=item.querySelector('.playbook-desc').textContent.toLowerCase();if(title.includes(query)||desc.includes(query)){item.style.display='flex';hasVisible=true}else{item.style.display='none'}});cat.style.display=hasVisible?'block':'none'})});
 </script>
 </body>
 </html>
