@@ -22,7 +22,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-
 .search-container{margin-bottom:30px}
 .search-box{width:100%;padding:15px 20px;border:2px solid #e0e0e0;border-radius:10px;font-size:16px;background:#fff}
 .search-box:focus{outline:none;border-color:#2563eb}
-.category{background:#fff;border-radius:12px;margin-bottom:15px;box-shadow:0 2px 10px rgba(0,0,0,0.08);overflow:hidden}
+.category{background:#fff;border-radius:12px;margin-bottom:15px;box-shadow:0 2px 10px rgba(0,0,0,0.08);overflow:hidden;scroll-margin-top:20px}
 .category-header{padding:20px 25px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;transition:background 0.2s}
 .category-header:hover{background:#f8fafc}
 .category-left{display:flex;align-items:center;gap:15px}
@@ -43,6 +43,9 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-
 .playbook-savings{font-size:13px;color:#059669;font-weight:600}
 .playbook-time{font-size:11px;padding:4px 10px;border-radius:15px;background:#f1f5f9;color:#475569}
 .playbook-arrow{color:#cbd5e1;font-size:18px}
+
+.highlight-category{animation:highlightPulse 2s ease-out}
+@keyframes highlightPulse{0%{box-shadow:0 0 0 4px rgba(37,99,235,0.5)}100%{box-shadow:0 2px 10px rgba(0,0,0,0.08)}}
 @media(max-width:600px){.playbook-item{flex-direction:column;align-items:flex-start;gap:10px}.playbook-meta{width:100%;justify-content:space-between}}
 </style>
 </head>
@@ -67,15 +70,9 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-
 <input type="text" class="search-box" id="search" placeholder="🔍 Search all playbooks...">
 </div>
 
-<div class="category open" data-category="shopping">
+<div class="category open" id="shopping" data-category="shopping">
 <div class="category-header" onclick="toggleCategory(this)">
-<div class="category-left">
-<span class="category-icon">🛒</span>
-<div>
-<div class="category-title">Shopping & Impulse Control</div>
-<div class="category-count">8 playbooks</div>
-</div>
-</div>
+<div class="category-left"><span class="category-icon">🛒</span><div><div class="category-title">Shopping & Impulse Control</div><div class="category-count">15 playbooks</div></div></div>
 <span class="category-arrow">▼</span>
 </div>
 <div class="playbook-list">
@@ -87,18 +84,20 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-
 <a href="/blueprints/no-spend-challenge.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">No-Spend Challenge Guide</div><div class="playbook-desc">Complete guide to no-spend periods</div></div><div class="playbook-meta"><span class="playbook-savings">Save $100-400</span><span class="playbook-time">10 min</span></div><span class="playbook-arrow">→</span></a>
 <a href="/blueprints/unsubscribe-emails.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Unsubscribe from Marketing Emails</div><div class="playbook-desc">Stop tempting sale emails</div></div><div class="playbook-meta"><span class="playbook-savings">Prevents impulse buys</span><span class="playbook-time">5 min</span></div><span class="playbook-arrow">→</span></a>
 <a href="/blueprints/shopping-app-detox.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Shopping App Detox</div><div class="playbook-desc">Complete guide to breaking app addiction</div></div><div class="playbook-meta"><span class="playbook-savings">Save $200-600/mo</span><span class="playbook-time">15 min</span></div><span class="playbook-arrow">→</span></a>
+<!-- NEW PLAYBOOKS -->
+<a href="/blueprints/hide-shopping-apps.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Hide Shopping Apps</div><div class="playbook-desc">Delete or hide apps to remove temptation</div></div><div class="playbook-meta"><span class="playbook-savings">Save $50-200/mo</span><span class="playbook-time">5 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/disable-push-promos.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Disable Push Notifications</div><div class="playbook-desc">Stop promotional alerts from triggering purchases</div></div><div class="playbook-meta"><span class="playbook-savings">Save $30-100/mo</span><span class="playbook-time">10 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/thrift-first-rule.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Thrift First Rule</div><div class="playbook-desc">Check thrift stores before buying new</div></div><div class="playbook-meta"><span class="playbook-savings">Save $200-500/yr</span><span class="playbook-time">Ongoing</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/repair-before-replace.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Repair Before Replace</div><div class="playbook-desc">Fix items instead of buying new</div></div><div class="playbook-meta"><span class="playbook-savings">Save $200-1,000/yr</span><span class="playbook-time">Varies</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/buy-nothing-freecycle.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Buy Nothing & Freecycle</div><div class="playbook-desc">Get free stuff from your neighbors</div></div><div class="playbook-meta"><span class="playbook-savings">Save $100-500/yr</span><span class="playbook-time">Browse time</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/capsule-wardrobe.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Capsule Wardrobe</div><div class="playbook-desc">30-40 versatile pieces = endless outfits</div></div><div class="playbook-meta"><span class="playbook-savings">Save $500-1,500/yr</span><span class="playbook-time">Setup</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/warranties-audit.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Audit Your Warranties</div><div class="playbook-desc">Use warranties you forgot you have</div></div><div class="playbook-meta"><span class="playbook-savings">Save $100-1,000/yr</span><span class="playbook-time">1 hour</span></div><span class="playbook-arrow">→</span></a>
 </div>
 </div>
 
-<div class="category" data-category="subscriptions">
+<div class="category" id="subscriptions" data-category="subscriptions">
 <div class="category-header" onclick="toggleCategory(this)">
-<div class="category-left">
-<span class="category-icon">🔄</span>
-<div>
-<div class="category-title">Subscriptions & Recurring Charges</div>
-<div class="category-count">6 playbooks</div>
-</div>
-</div>
+<div class="category-left"><span class="category-icon">🔄</span><div><div class="category-title">Subscriptions & Recurring Charges</div><div class="category-count">6 playbooks</div></div></div>
 <span class="category-arrow">▼</span>
 </div>
 <div class="playbook-list">
@@ -111,15 +110,9 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-
 </div>
 </div>
 
-<div class="category" data-category="bills">
+<div class="category" id="bills" data-category="bills">
 <div class="category-header" onclick="toggleCategory(this)">
-<div class="category-left">
-<span class="category-icon">📱</span>
-<div>
-<div class="category-title">Bills & Utilities</div>
-<div class="category-count">12 playbooks</div>
-</div>
-</div>
+<div class="category-left"><span class="category-icon">📱</span><div><div class="category-title">Bills & Utilities</div><div class="category-count">21 playbooks</div></div></div>
 <span class="category-arrow">▼</span>
 </div>
 <div class="playbook-list">
@@ -135,18 +128,22 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-
 <a href="/blueprints/autopay-setup.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Autopay Setup Guide</div><div class="playbook-desc">Never miss a payment or pay late fees</div></div><div class="playbook-meta"><span class="playbook-savings">Avoid $25+ fees</span><span class="playbook-time">15 min</span></div><span class="playbook-arrow">→</span></a>
 <a href="/blueprints/bank-alerts.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Bank Alert Setup</div><div class="playbook-desc">Get notified of spending and low balances</div></div><div class="playbook-meta"><span class="playbook-savings">Prevents overdrafts</span><span class="playbook-time">10 min</span></div><span class="playbook-arrow">→</span></a>
 <a href="/blueprints/utility-assistance.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Utility Assistance Programs</div><div class="playbook-desc">Find help paying utility bills</div></div><div class="playbook-meta"><span class="playbook-savings">Save $50-200/mo</span><span class="playbook-time">30 min</span></div><span class="playbook-arrow">→</span></a>
+<!-- NEW PLAYBOOKS -->
+<a href="/blueprints/pmi-removal.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Remove PMI from Mortgage</div><div class="playbook-desc">Eliminate private mortgage insurance</div></div><div class="playbook-meta"><span class="playbook-savings">Save $100-300/mo</span><span class="playbook-time">30 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/renters-insurance-shopping.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Shop Renters Insurance</div><div class="playbook-desc">Compare rates annually and save</div></div><div class="playbook-meta"><span class="playbook-savings">Save $50-200/yr</span><span class="playbook-time">20 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/led-power-strips.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">LED Bulbs & Smart Power Strips</div><div class="playbook-desc">Cut phantom power and lighting costs</div></div><div class="playbook-meta"><span class="playbook-savings">Save $100-200/yr</span><span class="playbook-time">1 hour</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/weatherstripping-draft.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Weatherstripping & Draft Sealing</div><div class="playbook-desc">Seal air leaks to cut heating/cooling costs</div></div><div class="playbook-meta"><span class="playbook-savings">Save $100-250/yr</span><span class="playbook-time">1-2 hours</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/energy-star-appliances.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Energy Star Appliances</div><div class="playbook-desc">Choose efficient appliances when replacing</div></div><div class="playbook-meta"><span class="playbook-savings">Save $50-200/yr</span><span class="playbook-time">Research</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/liheap-utility-assistance.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">LIHEAP Utility Assistance</div><div class="playbook-desc">Federal program to help pay utility bills</div></div><div class="playbook-meta"><span class="playbook-savings">Save $200-1,000/yr</span><span class="playbook-time">30 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/downsize-at-renewal.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Downsize at Lease Renewal</div><div class="playbook-desc">Move to smaller unit and save big</div></div><div class="playbook-meta"><span class="playbook-savings">Save $100-400/mo</span><span class="playbook-time">Planning</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/211-assistance-programs.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">211 Local Assistance Programs</div><div class="playbook-desc">One call connects to dozens of local resources</div></div><div class="playbook-meta"><span class="playbook-savings">Varies</span><span class="playbook-time">15 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/autopay-paperless-discounts.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Autopay & Paperless Discounts</div><div class="playbook-desc">Get $3-10 off per bill automatically</div></div><div class="playbook-meta"><span class="playbook-savings">Save $50-150/yr</span><span class="playbook-time">30 min</span></div><span class="playbook-arrow">→</span></a>
 </div>
 </div>
 
-<div class="category" data-category="food">
+<div class="category" id="food" data-category="food">
 <div class="category-header" onclick="toggleCategory(this)">
-<div class="category-left">
-<span class="category-icon">🍽️</span>
-<div>
-<div class="category-title">Food & Groceries</div>
-<div class="category-count">10 playbooks</div>
-</div>
-</div>
+<div class="category-left"><span class="category-icon">🍽️</span><div><div class="category-title">Food & Groceries</div><div class="category-count">18 playbooks</div></div></div>
 <span class="category-arrow">▼</span>
 </div>
 <div class="playbook-list">
@@ -160,18 +157,21 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-
 <a href="/blueprints/price-matching.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Price Matching</div><div class="playbook-desc">Get the lowest price without multiple trips</div></div><div class="playbook-meta"><span class="playbook-savings">Save $20-60/mo</span><span class="playbook-time">10 min</span></div><span class="playbook-arrow">→</span></a>
 <a href="/blueprints/grow-your-own-food.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Grow Your Own Food</div><div class="playbook-desc">Start a money-saving garden</div></div><div class="playbook-meta"><span class="playbook-savings">Save $50-200/mo</span><span class="playbook-time">Ongoing</span></div><span class="playbook-arrow">→</span></a>
 <a href="/blueprints/generic-medications.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Generic Medications</div><div class="playbook-desc">Switch to generics and save big</div></div><div class="playbook-meta"><span class="playbook-savings">Save $20-100/mo</span><span class="playbook-time">15 min</span></div><span class="playbook-arrow">→</span></a>
+<!-- NEW PLAYBOOKS -->
+<a href="/blueprints/cashback-loyalty-stack.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Stack Cashback & Loyalty Rewards</div><div class="playbook-desc">Combine multiple savings on every purchase</div></div><div class="playbook-meta"><span class="playbook-savings">Save $50-150/mo</span><span class="playbook-time">15 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/school-lunch-strategy.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Free & Reduced School Lunch</div><div class="playbook-desc">Income limits higher than you think!</div></div><div class="playbook-meta"><span class="playbook-savings">Save $50-200/mo</span><span class="playbook-time">15 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/seven-cheap-meals.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">7 Cheap Meals on Rotation</div><div class="playbook-desc">Master budget meals your family loves</div></div><div class="playbook-meta"><span class="playbook-savings">Save $100-200/mo</span><span class="playbook-time">Ongoing</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/brand-swap-generics.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Brand Swap to Store Brands</div><div class="playbook-desc">Same quality, 20-40% less cost</div></div><div class="playbook-meta"><span class="playbook-savings">Save $50-150/mo</span><span class="playbook-time">Ongoing</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/three-store-loop.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">3-Store Shopping Strategy</div><div class="playbook-desc">Hit multiple stores for best prices</div></div><div class="playbook-meta"><span class="playbook-savings">Save $75-200/mo</span><span class="playbook-time">30 min/wk</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/cart-lock-remove-20.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Remove 20% Before Checkout</div><div class="playbook-desc">Put back impulse items at checkout</div></div><div class="playbook-meta"><span class="playbook-savings">Save $30-80/mo</span><span class="playbook-time">2 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/produce-3-day-plan.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Buy Produce in 3-Day Cycles</div><div class="playbook-desc">No more wasted produce!</div></div><div class="playbook-meta"><span class="playbook-savings">Save $30-60/mo</span><span class="playbook-time">Planning</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/eat-at-home-30-day.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">30-Day Eat at Home Challenge</div><div class="playbook-desc">No restaurants for 30 days = huge savings</div></div><div class="playbook-meta"><span class="playbook-savings">Save $200-500</span><span class="playbook-time">30 days</span></div><span class="playbook-arrow">→</span></a>
 </div>
 </div>
 
-<div class="category" data-category="insurance">
+<div class="category" id="insurance" data-category="insurance">
 <div class="category-header" onclick="toggleCategory(this)">
-<div class="category-left">
-<span class="category-icon">🛡️</span>
-<div>
-<div class="category-title">Insurance & Big Bills</div>
-<div class="category-count">8 playbooks</div>
-</div>
-</div>
+<div class="category-left"><span class="category-icon">🛡️</span><div><div class="category-title">Insurance & Big Bills</div><div class="category-count">8 playbooks</div></div></div>
 <span class="category-arrow">▼</span>
 </div>
 <div class="playbook-list">
@@ -186,15 +186,35 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-
 </div>
 </div>
 
-<div class="category" data-category="debt">
+<div class="category" id="health" data-category="health">
 <div class="category-header" onclick="toggleCategory(this)">
-<div class="category-left">
-<span class="category-icon">💳</span>
-<div>
-<div class="category-title">Debt & Banking</div>
-<div class="category-count">10 playbooks</div>
+<div class="category-left"><span class="category-icon">🏥</span><div><div class="category-title">Health & Medical Savings</div><div class="category-count">6 playbooks</div></div></div>
+<span class="category-arrow">▼</span>
+</div>
+<div class="playbook-list">
+<a href="/blueprints/community-health-centers.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Community Health Centers</div><div class="playbook-desc">Sliding scale fees based on income</div></div><div class="playbook-meta"><span class="playbook-savings">Save $100-500/visit</span><span class="playbook-time">Research</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/ask-for-generics.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Always Ask for Generics</div><div class="playbook-desc">Save 80% on prescriptions</div></div><div class="playbook-meta"><span class="playbook-savings">Save $20-200/mo</span><span class="playbook-time">Every visit</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/hospital-financial-assistance.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Hospital Financial Assistance</div><div class="playbook-desc">Reduce or eliminate medical bills</div></div><div class="playbook-meta"><span class="playbook-savings">Save 50-100%</span><span class="playbook-time">1-2 hours</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/shop-labs-imaging.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Shop Labs & Imaging Prices</div><div class="playbook-desc">Same test can cost $30 or $300</div></div><div class="playbook-meta"><span class="playbook-savings">Save $100-1,000+</span><span class="playbook-time">Research</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/itemized-bill-cash-pay.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Itemized Bills & Cash Pay</div><div class="playbook-desc">Negotiate bills down 20-40%</div></div><div class="playbook-meta"><span class="playbook-savings">Save $100-5,000+</span><span class="playbook-time">30-60 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/no-surprises-act.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Know Your No Surprises Act Rights</div><div class="playbook-desc">Protection from surprise medical bills</div></div><div class="playbook-meta"><span class="playbook-savings">Avoid $100-10,000+</span><span class="playbook-time">Know before you go</span></div><span class="playbook-arrow">→</span></a>
 </div>
 </div>
+
+<div class="category" id="transportation" data-category="transportation">
+<div class="category-header" onclick="toggleCategory(this)">
+<div class="category-left"><span class="category-icon">🚗</span><div><div class="category-title">Transportation Savings</div><div class="category-count">2 playbooks</div></div></div>
+<span class="category-arrow">▼</span>
+</div>
+<div class="playbook-list">
+<a href="/blueprints/tire-inflation-savings.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Proper Tire Inflation</div><div class="playbook-desc">Better MPG with properly inflated tires</div></div><div class="playbook-meta"><span class="playbook-savings">Save $100-200/yr</span><span class="playbook-time">5 min/mo</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/public-transit-passes.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Public Transit Passes</div><div class="playbook-desc">Monthly passes + pre-tax benefits</div></div><div class="playbook-meta"><span class="playbook-savings">Save $50-200/mo</span><span class="playbook-time">15 min</span></div><span class="playbook-arrow">→</span></a>
+</div>
+</div>
+
+<div class="category" id="debt" data-category="debt">
+<div class="category-header" onclick="toggleCategory(this)">
+<div class="category-left"><span class="category-icon">💳</span><div><div class="category-title">Debt & Banking</div><div class="category-count">10 playbooks</div></div></div>
 <span class="category-arrow">▼</span>
 </div>
 <div class="playbook-list">
@@ -211,15 +231,9 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-
 </div>
 </div>
 
-<div class="category" data-category="financial">
+<div class="category" id="financial" data-category="financial">
 <div class="category-header" onclick="toggleCategory(this)">
-<div class="category-left">
-<span class="category-icon">🏦</span>
-<div>
-<div class="category-title">Financial Planning & Savings</div>
-<div class="category-count">7 playbooks</div>
-</div>
-</div>
+<div class="category-left"><span class="category-icon">🏦</span><div><div class="category-title">Financial Planning & Savings</div><div class="category-count">7 playbooks</div></div></div>
 <span class="category-arrow">▼</span>
 </div>
 <div class="playbook-list">
@@ -233,15 +247,9 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-
 </div>
 </div>
 
-<div class="category" data-category="diy">
+<div class="category" id="diy" data-category="diy">
 <div class="category-header" onclick="toggleCategory(this)">
-<div class="category-left">
-<span class="category-icon">🔧</span>
-<div>
-<div class="category-title">DIY & Lifestyle Savings</div>
-<div class="category-count">6 playbooks</div>
-</div>
-</div>
+<div class="category-left"><span class="category-icon">🔧</span><div><div class="category-title">DIY & Lifestyle Savings</div><div class="category-count">7 playbooks</div></div></div>
 <span class="category-arrow">▼</span>
 </div>
 <div class="playbook-list">
@@ -251,18 +259,38 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-
 <a href="/blueprints/carpooling-rideshare.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Carpooling & Rideshare</div><div class="playbook-desc">Share rides to save on gas</div></div><div class="playbook-meta"><span class="playbook-savings">Save $100-300/mo</span><span class="playbook-time">15 min</span></div><span class="playbook-arrow">→</span></a>
 <a href="/blueprints/library-savings.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Library Savings</div><div class="playbook-desc">Free books, movies, and more</div></div><div class="playbook-meta"><span class="playbook-savings">Save $50-100/mo</span><span class="playbook-time">10 min</span></div><span class="playbook-arrow">→</span></a>
 <a href="/blueprints/thrift-store-shopping.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Thrift Store Shopping</div><div class="playbook-desc">Find quality items for less</div></div><div class="playbook-meta"><span class="playbook-savings">Save 50-80%</span><span class="playbook-time">Ongoing</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/diy-cleaners.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">DIY Cleaning Products</div><div class="playbook-desc">Make cleaners for pennies</div></div><div class="playbook-meta"><span class="playbook-savings">Save $100-200/yr</span><span class="playbook-time">15 min</span></div><span class="playbook-arrow">→</span></a>
 </div>
 </div>
 
-<div class="category" data-category="discounts">
+<div class="category" id="family" data-category="family">
 <div class="category-header" onclick="toggleCategory(this)">
-<div class="category-left">
-<span class="category-icon">🎟️</span>
-<div>
-<div class="category-title">Discounts & Perks</div>
-<div class="category-count">4 playbooks</div>
+<div class="category-left"><span class="category-icon">👨‍👩‍👧‍👦</span><div><div class="category-title">Kids & Family Savings</div><div class="category-count">4 playbooks</div></div></div>
+<span class="category-arrow">▼</span>
+</div>
+<div class="playbook-list">
+<a href="/blueprints/babysitting-swap.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Babysitting Swap</div><div class="playbook-desc">Free childcare with other parents</div></div><div class="playbook-meta"><span class="playbook-savings">Save $200-500/mo</span><span class="playbook-time">Coordination</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/early-bird-camps.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Early Bird Camp Registration</div><div class="playbook-desc">Save 10-20% registering early</div></div><div class="playbook-meta"><span class="playbook-savings">Save $100-400/yr</span><span class="playbook-time">Planning</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/toy-book-rotation.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Toy & Book Rotation</div><div class="playbook-desc">Make old toys feel new again</div></div><div class="playbook-meta"><span class="playbook-savings">Save $300-600/yr</span><span class="playbook-time">Setup</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/clothing-swap-kids.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Kids Clothing Swap</div><div class="playbook-desc">Trade outgrown clothes with other parents</div></div><div class="playbook-meta"><span class="playbook-savings">Save $200-500/yr</span><span class="playbook-time">Events</span></div><span class="playbook-arrow">→</span></a>
 </div>
 </div>
+
+<div class="category" id="pets" data-category="pets">
+<div class="category-header" onclick="toggleCategory(this)">
+<div class="category-left"><span class="category-icon">🐾</span><div><div class="category-title">Pet Savings</div><div class="category-count">3 playbooks</div></div></div>
+<span class="category-arrow">▼</span>
+</div>
+<div class="playbook-list">
+<a href="/blueprints/diy-grooming-basics.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">DIY Pet Grooming</div><div class="playbook-desc">Groom at home, save $30-80/visit</div></div><div class="playbook-meta"><span class="playbook-savings">Save $30-80/visit</span><span class="playbook-time">30-60 min</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/pet-sitting-swaps.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Pet Sitting Swaps</div><div class="playbook-desc">Free pet care when you travel</div></div><div class="playbook-meta"><span class="playbook-savings">Save $50-100/day</span><span class="playbook-time">Coordination</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/pet-food-autoship-alerts.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Pet Food Autoship & Alerts</div><div class="playbook-desc">Save 5-15% with subscriptions + deals</div></div><div class="playbook-meta"><span class="playbook-savings">Save $15-40/mo</span><span class="playbook-time">15 min</span></div><span class="playbook-arrow">→</span></a>
+</div>
+</div>
+
+<div class="category" id="discounts" data-category="discounts">
+<div class="category-header" onclick="toggleCategory(this)">
+<div class="category-left"><span class="category-icon">🎟️</span><div><div class="category-title">Discounts & Perks</div><div class="category-count">4 playbooks</div></div></div>
 <span class="category-arrow">▼</span>
 </div>
 <div class="playbook-list">
@@ -273,15 +301,9 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-
 </div>
 </div>
 
-<div class="category" data-category="mindset">
+<div class="category" id="mindset" data-category="mindset">
 <div class="category-header" onclick="toggleCategory(this)">
-<div class="category-left">
-<span class="category-icon">🧠</span>
-<div>
-<div class="category-title">Mindset & Goals</div>
-<div class="category-count">4 playbooks</div>
-</div>
-</div>
+<div class="category-left"><span class="category-icon">🧠</span><div><div class="category-title">Mindset & Goals</div><div class="category-count">4 playbooks</div></div></div>
 <span class="category-arrow">▼</span>
 </div>
 <div class="playbook-list">
@@ -295,6 +317,28 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-
 </div>
 <script>
 function toggleCategory(header){header.parentElement.classList.toggle('open')}
+
+function handleHashNavigation() {
+  var hash = window.location.hash;
+  if (hash) {
+    var targetId = hash.substring(1);
+    var targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      document.querySelectorAll('.category').forEach(function(cat) {
+        cat.classList.remove('open');
+      });
+      targetElement.classList.add('open');
+      setTimeout(function() {
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        targetElement.classList.add('highlight-category');
+      }, 100);
+    }
+  }
+}
+
+window.addEventListener('DOMContentLoaded', handleHashNavigation);
+window.addEventListener('hashchange', handleHashNavigation);
+
 document.getElementById('search').addEventListener('input',function(){const query=this.value.toLowerCase();const items=document.querySelectorAll('.playbook-item');const categories=document.querySelectorAll('.category');if(query===''){categories.forEach((cat,i)=>{cat.style.display='block';if(i===0)cat.classList.add('open');else cat.classList.remove('open')});items.forEach(item=>item.style.display='flex');return}categories.forEach(cat=>{cat.classList.add('open');let hasVisible=false;cat.querySelectorAll('.playbook-item').forEach(item=>{const title=item.querySelector('.playbook-title').textContent.toLowerCase();const desc=item.querySelector('.playbook-desc').textContent.toLowerCase();if(title.includes(query)||desc.includes(query)){item.style.display='flex';hasVisible=true}else{item.style.display='none'}});cat.style.display=hasVisible?'block':'none'})});
 </script>
 </body>
