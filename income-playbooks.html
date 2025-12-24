@@ -22,7 +22,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-
 .search-container{margin-bottom:30px}
 .search-box{width:100%;padding:15px 20px;border:2px solid #e0e0e0;border-radius:10px;font-size:16px;background:#fff}
 .search-box:focus{outline:none;border-color:#2563eb}
-.category{background:#fff;border-radius:12px;margin-bottom:15px;box-shadow:0 2px 10px rgba(0,0,0,0.08);overflow:hidden}
+.category{background:#fff;border-radius:12px;margin-bottom:15px;box-shadow:0 2px 10px rgba(0,0,0,0.08);overflow:hidden;scroll-margin-top:20px}
 .category-header{padding:20px 25px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;transition:background 0.2s}
 .category-header:hover{background:#f8fafc}
 .category-left{display:flex;align-items:center;gap:15px}
@@ -46,6 +46,8 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-
 .difficulty-medium{background:#fef3c7;color:#92400e}
 .difficulty-hard{background:#dbeafe;color:#1e40af}
 .playbook-arrow{color:#cbd5e1;font-size:18px}
+.highlight-category{animation:highlightPulse 2s ease-out}
+@keyframes highlightPulse{0%{box-shadow:0 0 0 4px rgba(37,99,235,0.5)}100%{box-shadow:0 2px 10px rgba(0,0,0,0.08)}}
 @media(max-width:600px){.playbook-item{flex-direction:column;align-items:flex-start;gap:10px}.playbook-meta{width:100%;justify-content:space-between}}
 </style>
 </head>
@@ -60,17 +62,41 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-
 <h3>🚀 Easiest Ways to Start Earning Today</h3>
 <p>These require minimal setup and you can start within 24-48 hours:</p>
 <div class="quick-start-list">
+<a href="/blueprints/host-garage-sale.html" class="quick-start-link">🏷️ Host Garage Sale</a>
 <a href="/blueprints/rideshare-driver.html" class="quick-start-link">🚗 Rideshare Driving</a>
 <a href="/blueprints/delivery-driver-gig.html" class="quick-start-link">🍔 Food Delivery</a>
 <a href="/blueprints/pet-sitting-dog-walking.html" class="quick-start-link">🐾 Pet Care</a>
-<a href="/blueprints/online-surveys.html" class="quick-start-link">📝 Online Surveys</a>
 </div>
 </div>
 <div class="search-container">
 <input type="text" class="search-box" id="search" placeholder="🔍 Search all playbooks...">
 </div>
 
-<div class="category open" data-category="gig">
+<!-- NEW: Sell Stuff for Quick Cash - at TOP -->
+<div class="category open" id="selling-quick" data-category="selling-quick">
+<div class="category-header" onclick="toggleCategory(this)">
+<div class="category-left">
+<span class="category-icon">🏷️</span>
+<div>
+<div class="category-title">Sell Stuff for Quick Cash</div>
+<div class="category-count">8 playbooks</div>
+</div>
+</div>
+<span class="category-arrow">▼</span>
+</div>
+<div class="playbook-list">
+<a href="/blueprints/host-garage-sale.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">🆕 Host a Garage Sale</div><div class="playbook-desc">Complete guide: pricing, advertising, setup, negotiation</div></div><div class="playbook-meta"><span class="playbook-earnings">$200-2000</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/closet-declutter.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">🆕 Closet Declutter & Sell</div><div class="playbook-desc">Turn unused clothes into cash</div></div><div class="playbook-meta"><span class="playbook-earnings">$100-500</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/sell-furniture.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">🆕 Sell Furniture Fast</div><div class="playbook-desc">Get top dollar for furniture on FB Marketplace</div></div><div class="playbook-meta"><span class="playbook-earnings">$100-1000+</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/garage-sale-prep.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">🆕 Find Items to Sell</div><div class="playbook-desc">Room-by-room guide to finding sellable items</div></div><div class="playbook-meta"><span class="playbook-earnings">$200-1000</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/sell-gift-cards.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">🆕 Sell Unused Gift Cards</div><div class="playbook-desc">Turn forgotten gift cards into cash</div></div><div class="playbook-meta"><span class="playbook-earnings">$50-300</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/unclaimed-money.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">🆕 Find Unclaimed Money</div><div class="playbook-desc">Search for money owed to you</div></div><div class="playbook-meta"><span class="playbook-earnings">$0-1000+</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/selling-guide.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Quick Sell Guide</div><div class="playbook-desc">Sell items you already own</div></div><div class="playbook-meta"><span class="playbook-earnings">$100-1000</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/sell-facebook-marketplace.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Sell on Facebook Marketplace</div><div class="playbook-desc">Sell items locally on FB</div></div><div class="playbook-meta"><span class="playbook-earnings">$100-1000/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+</div>
+</div>
+
+<div class="category" data-category="gig">
 <div class="category-header" onclick="toggleCategory(this)">
 <div class="category-left">
 <span class="category-icon">🚗</span>
@@ -118,7 +144,6 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-
 <a href="/blueprints/errand-running-seniors.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Senior Errand Services</div><div class="playbook-desc">Build recurring income helping seniors with errands & transport</div></div><div class="playbook-meta"><span class="playbook-earnings">$500-2000/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
 </div>
 </div>
-
 <div class="category" data-category="home">
 <div class="category-header" onclick="toggleCategory(this)">
 <div class="category-left">
@@ -199,7 +224,6 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-
 <a href="/blueprints/ebook-publishing.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">eBook Publishing</div><div class="playbook-desc">Write and sell digital books</div></div><div class="playbook-meta"><span class="playbook-earnings">$100-3000/mo</span><span class="playbook-difficulty difficulty-medium">Medium</span></div><span class="playbook-arrow">→</span></a>
 </div>
 </div>
-
 <div class="category" data-category="teaching">
 <div class="category-header" onclick="toggleCategory(this)">
 <div class="category-left">
@@ -306,7 +330,6 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-
 <a href="/blueprints/ask-overtime.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Ask for Overtime</div><div class="playbook-desc">Get more hours at work</div></div><div class="playbook-meta"><span class="playbook-earnings">$200-1000/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
 </div>
 </div>
-
 <div class="category" data-category="selling">
 <div class="category-header" onclick="toggleCategory(this)">
 <div class="category-left">
@@ -359,7 +382,6 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-
 <a href="/blueprints/sell-breast-milk.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">Sell Breast Milk</div><div class="playbook-desc">Help mothers and earn money</div></div><div class="playbook-meta"><span class="playbook-earnings">$200-1000/mo</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
 </div>
 </div>
-
 <div class="category" data-category="passive">
 <div class="category-header" onclick="toggleCategory(this)">
 <div class="category-left">
@@ -398,9 +420,49 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f7fa;color:#333;line-
 </div>
 </div>
 
+<!-- NEW: Wealth Building Education - at BOTTOM -->
+<div class="category" id="wealth" data-category="wealth">
+<div class="category-header" onclick="toggleCategory(this)">
+<div class="category-left">
+<span class="category-icon">💎</span>
+<div>
+<div class="category-title">Wealth Building Education</div>
+<div class="category-count">2 playbooks</div>
+</div>
+</div>
+<span class="category-arrow">▼</span>
+</div>
+<div class="playbook-list">
+<a href="/blueprints/wealth-building-paths.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">🆕 Wealth Building Paths Education</div><div class="playbook-desc">Learn about 6 paths: retirement accounts, index funds, real estate, business, dividends, alternatives</div></div><div class="playbook-meta"><span class="playbook-earnings">Education</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+<a href="/blueprints/wealth-building-first-action.html" class="playbook-item"><div class="playbook-info"><div class="playbook-title">🆕 Take Your First Action (30-Day Challenge)</div><div class="playbook-desc">30-day challenge to take your first wealth-building action</div></div><div class="playbook-meta"><span class="playbook-earnings">Start Now</span><span class="playbook-difficulty difficulty-easy">Easy Start</span></div><span class="playbook-arrow">→</span></a>
+</div>
+</div>
+
 </div>
 <script>
 function toggleCategory(header){header.parentElement.classList.toggle('open')}
+
+function handleHashNavigation() {
+  var hash = window.location.hash;
+  if (hash) {
+    var targetId = hash.substring(1);
+    var targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      document.querySelectorAll('.category').forEach(function(cat) {
+        cat.classList.remove('open');
+      });
+      targetElement.classList.add('open');
+      setTimeout(function() {
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        targetElement.classList.add('highlight-category');
+      }, 100);
+    }
+  }
+}
+
+window.addEventListener('DOMContentLoaded', handleHashNavigation);
+window.addEventListener('hashchange', handleHashNavigation);
+
 document.getElementById('search').addEventListener('input',function(){const query=this.value.toLowerCase();const items=document.querySelectorAll('.playbook-item');const categories=document.querySelectorAll('.category');if(query===''){categories.forEach((cat,i)=>{cat.style.display='block';if(i===0)cat.classList.add('open');else cat.classList.remove('open')});items.forEach(item=>item.style.display='flex');return}categories.forEach(cat=>{cat.classList.add('open');let hasVisible=false;cat.querySelectorAll('.playbook-item').forEach(item=>{const title=item.querySelector('.playbook-title').textContent.toLowerCase();const desc=item.querySelector('.playbook-desc').textContent.toLowerCase();if(title.includes(query)||desc.includes(query)){item.style.display='flex';hasVisible=true}else{item.style.display='none'}});cat.style.display=hasVisible?'block':'none'})});
 </script>
 </body>
